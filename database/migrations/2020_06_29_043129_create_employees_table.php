@@ -41,6 +41,19 @@ class CreateEmployeesTable extends Migration
             'designation' => 'IT Head',
             'monthly_salary' => 5000
         ]);
+
+        DB::table('employees')->insert([
+            'name' => "Mubeen Akram",
+            'guardian_name' => "Muhammad Akram",
+            'gender' => 'male',
+            'age' => 20,
+            'address' => 'Sultan Town Lahore',
+            'phone' => '03044429983',
+            'cnic' => '3520235169171',
+            'education' => 'Fsc Pre Enginnering',
+            'designation' => 'Doctor',
+            'monthly_salary' => 25000
+        ]);
     }
 
     /**

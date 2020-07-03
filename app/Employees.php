@@ -19,4 +19,9 @@ class Employees extends Model
     {
         return $this->hasOne(User::class, 'employee_id', 'id');
     }
+
+    public function token()
+    {
+        return $this->hasOne(TokenNumber::class, 'employee_id', 'id');
+    }
 }
