@@ -46,6 +46,17 @@
                     padding: 5px 10px !important;
                     font-size: 14px;
                 }
+
+                .side-line {
+                    display: block;
+                    position: absolute;
+                    width: 2px;
+                    background-color: black;
+                    height: 85%;
+                    top: 12%;
+                    left: 70px;
+
+                }
             </style>
 
             <div class="patient-slip">
@@ -56,7 +67,7 @@
                         <p class="mt-n2 text-capitalize">{{config('app.address')}}</p>
                     </div>
                 </div>
-                <div class="card-body p-0 patient-slip-body">
+                <div class="card-body p-0 patient-slip-body position-relative">
                     <ul class="text-capitalize row">
                         <li class="col-md-6">
                             <span class="font-weight-bold">Name : </span>
@@ -85,6 +96,7 @@
                         </li>
 
                     </ul>
+                    <div class="side-line"></div>
                 </div>
                 <div class="card-footer row">
                     <div class="col-md-6">
@@ -103,8 +115,11 @@
 
 </html>
 <script>
-    document.addEventListener('DOMContentLoaded', function(){
+    document.addEventListener('DOMContentLoaded', function() {
         // const printSlip = document.querySelector('.patient-slip');
         window.print();
+        setTimeout(() => {
+            window.location.href = '/patients';
+        }, 1500)
     });
 </script>

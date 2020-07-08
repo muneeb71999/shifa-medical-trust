@@ -41,9 +41,33 @@ Route::get('/employees/create', 'EmployeesController@create')->name('employees.c
 Route::delete('/employees/{employee}/destroy', 'EmployeesController@destroy')->name('employees.destroy');
 Route::get('/employees/{employee}/show', 'EmployeesController@show')->name('employees.show');
 
+
+// Pharamacy Controller Routes
+Route::get('/sales', 'SalesController@index')->name('sales.index');
+Route::get('/sales/list', 'SalesController@list')->name('sales.list');
+// Route::delete('/sales/{sale}/destroy', 'SalesController@destroy')->name('sales.destroy');
+Route::post('/sales/items', 'SalesController@storeItems')->name('sales.storeItems');
+Route::get('/sales/medicine', 'SalesController@create')->name('sales.medicine');
+Route::get('/sales/print/{id}', 'SalesController@print')->name('sales.print');
+Route::get('/sales/{medicine}/show', 'SalesController@show')->name('sales.show');
+Route::get('/sales/search/{search}', 'SalesController@search');
+
+// Medicines Controller Routes
+Route::get('/medicine', 'MedicinesController@index')->name('medicine.index');
+Route::get('/medicine/list', 'MedicinesController@list')->name('medicine.list');
+Route::post('/medicine/store', 'MedicinesController@store')->name('medicine.store');
+Route::post('/medicine/show', 'MedicinesController@show')->name('medicine.show');
+Route::get('/medicine/{medicine}/edit', 'MedicinesController@edit')->name('medicine.edit');
+Route::post('/medicine/{medicine}/update/', 'MedicinesController@update')->name('medicine.update');
+Route::delete('/medicine/{medicine}/destroy', 'MedicinesController@destroy')->name('medicine.destroy');
+
 // User Controller Routes
 Route::delete('/users/{user}/destroy', 'UserController@destroy')->name('users.destroy');
 Route::get('/users/{user}/show', 'UserController@show')->name('users.show');
+
+Route::get('/audit', 'AuditController@index')->name('audit.index');
+Route::post('/audit/showPatients/', 'AuditController@showPatients')->name('audit.showPatients');
+Route::post('/audit/showMedicine/', 'AuditController@showMedicine')->name('audit.showMedicine');
 /*
 |--------------------------------------------------------------------------
 | Api Routes

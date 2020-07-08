@@ -39,9 +39,8 @@
                 <tr>
                     <td scope="row">{{ $patient->id }}</td>
                     <td>
-                        <button type="button" class="border-0 text-primary detailModal-btn" detailModal"
-                            data-id="{{$patient->id}}" data-toggle="modal" data-target="#detailModal"
-                            data-link="/patients/{{$patient->id}}/show">
+                        <button type="button" class="border-0 text-primary detailModal-btn" data-id="{{$patient->id}}"
+                            data-toggle="modal" data-target="#detailModal" data-link="/patients/{{$patient->id}}/show">
                             {{ $patient->name . '  ' . $patient->guardian_name }}
                         </button>
                     </td>

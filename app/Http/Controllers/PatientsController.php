@@ -73,6 +73,7 @@ class PatientsController extends Controller
                 'gender' => 'required',
                 'guardian_name' => '',
                 'fee' => 'required',
+                'phone' => '',
                 'doctor_id' => 'required'
             ]);
 
@@ -133,18 +134,10 @@ class PatientsController extends Controller
             'gender' => 'required',
             'guardian_name' => '',
             'fee' => 'required',
+            'phone' => '',
             'doctor_id' => 'required'
         ]);
 
-        $validatedFields = request()->validate([
-            'name' => 'required',
-            'age' => 'required',
-            'relation' => 'required',
-            'gender' => 'required',
-            'guardian_name' => '',
-            'fee' => 'required',
-            'doctor_id' => 'required'
-        ]);
 
         // Reset the name attribute
         $validatedFields['name'] = $validatedFields['name'] . ' ' .  $validatedFields['relation'];

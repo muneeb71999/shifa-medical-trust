@@ -8,3 +8,4 @@ require("./bootstrap");
 require("./chart");
 require("./search");
 require("./modal");
+require("./medicineSeach");

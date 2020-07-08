@@ -29,30 +29,18 @@ class CreateEmployeesTable extends Migration
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
 
-        DB::table('employees')->insert([
-            'name' => "Muneeb Akram",
-            'guardian_name' => "Muhammad Akram",
-            'gender' => 'male',
-            'age' => 20,
-            'address' => 'Sultan Town Lahore',
-            'phone' => '03044429983',
-            'cnic' => '3520235169171',
-            'education' => 'Fsc Pre Enginnering',
-            'designation' => 'IT Head',
-            'monthly_salary' => 5000
-        ]);
 
         DB::table('employees')->insert([
-            'name' => "Mubeen Akram",
-            'guardian_name' => "Muhammad Akram",
+            'name' => "Mubeen ",
+            'guardian_name' => "Akram",
             'gender' => 'male',
             'age' => 20,
             'address' => 'Sultan Town Lahore',
-            'phone' => '03044429983',
-            'cnic' => '3520235169171',
-            'education' => 'Fsc Pre Enginnering',
-            'designation' => 'Doctor',
-            'monthly_salary' => 25000
+            'phone' => '03014971904',
+            'cnic' => '352020510003',
+            'education' => 'Medical Dispenser',
+            'designation' => 'CEO',
+            'monthly_salary' => 5000
         ]);
     }
 

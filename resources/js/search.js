@@ -1,4 +1,5 @@
 import axios from "axios";
+import detailModalEventHandler from "./modal";
 const search = document.getElementById("search");
 const loading = document.getElementById("loading");
 const tableBody = document.getElementById("table-body");
@@ -63,14 +64,29 @@ function addData(data) {
   data.forEach(el => {
     markup += `<tr>
         <td scope="row">${el.id}</td>
-        <td>${el.name + " " + (el.guardian_name || "")}</td>
+        <td>
+            <button type="button" class="border-0 text-primary detailModal-btn" data-id="${
+              el.id
+            }"
+            data-toggle="modal" data-target="#detailModal" data-link="/patients/${
+              el.id
+            }/show">
+                ${el.name + " " + (el.guardian_name || "")}
+            </button>
+        </td>
         <td>${el.age}</td>
         <td>${el.fee}</td>
         <td>${el.created_at}</td>
         <td>
-            <button class="btn btn-success btn-sm">Print</button>
+            <a class="btn btn-success btn-sm" href="/patients/${
+              el.id
+            }/print">Print</a>
+            <a class="btn btn-primary btn-sm" href="/patients/${
+              el.id
+            }/printAndSave">Save and Print</a>
         </td>
     </tr>`;
   });
-  return tableBody.insertAdjacentHTML("afterbegin", markup);
+  tableBody.insertAdjacentHTML("afterbegin", markup);
+  detailModalEventHandler();
 }

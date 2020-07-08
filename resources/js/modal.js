@@ -1,23 +1,42 @@
 import axios from "axios";
 
-const detailBtn = document.querySelectorAll(".detailModal-btn");
+const updateBtn = document.querySelectorAll(".updateModal-btn");
 const detailModal = document.getElementById("detailModal-body");
+const updateModal = document.getElementById("updateModal-body");
 // const modalTitle = document.querySelector(".modal-title");
 // const token = document.querySelector('meta[name="csrf-token"]').content;
 
-if (detailBtn) {
-  detailBtn.forEach(el => {
-    el.addEventListener("click", async function() {
-      if (el.dataset.link.includes("users")) {
-        userModal(el);
-      } else if (el.dataset.link.includes("employees")) {
-        employeeModal(el);
-      } else if (el.dataset.link.includes("patients")) {
-        patientModal(el);
-      }
+if (updateBtn) {
+  updateBtn.forEach(el => {
+    el.addEventListener("click", async e => {
+      console.log(e.target);
+      medicineModal(el);
     });
   });
 }
+
+async function medicineModal(el) {
+  //   console.log(el.parent());
+}
+
+export default function detailModalEventHandler() {
+  const detailBtn = document.querySelectorAll(".detailModal-btn");
+  if (detailBtn) {
+    detailBtn.forEach(el => {
+      el.addEventListener("click", async function() {
+        if (el.dataset.link.includes("users")) {
+          userModal(el);
+        } else if (el.dataset.link.includes("employees")) {
+          employeeModal(el);
+        } else if (el.dataset.link.includes("patients")) {
+          patientModal(el);
+        }
+      });
+    });
+  }
+}
+
+detailModalEventHandler();
 
 async function employeeModal(el) {
   const { data } = await axios.get(el.dataset.link);

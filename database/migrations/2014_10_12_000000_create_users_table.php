@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('employee_id');
+            $table->unsignedBigInteger('employee_id')->nullable();
             $table->string('name');
             $table->string('username')->unique();
             $table->string('password');
@@ -25,12 +25,14 @@ class CreateUsersTable extends Migration
             $table->timestamps();
         });
 
+
+
         DB::table('users')->insert([
             'employee_id' => 1,
-            'name' => "Muneeb Akram",
-            'username' => "muneeb",
+            'name' => "Mubeen Akram",
+            'username' => "admin",
             'is_admin' => true,
-            'password' => Hash::make('test1234'),
+            'password' => Hash::make('smt786'),
         ]);
     }
 
